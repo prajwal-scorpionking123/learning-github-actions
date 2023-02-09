@@ -1,0 +1,13 @@
+name: Learning Github Actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  install-axios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/set-up@v3
+        with:
+          node-version: '14'
+      - run: npm install axios
+      - run: cat package.json
